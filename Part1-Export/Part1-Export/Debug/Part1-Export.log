@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  dllmain.cpp
+  Part1-Export.cpp
+C:\Users\uluru\source\repos\IGME209-project\Part1-Export\Part1-Export\Part1-Export.cpp(52,12): error C3861: 'rand': identifier not found
+C:\Users\uluru\source\repos\IGME209-project\Part1-Export\Part1-Export\Part1-Export.cpp(53,12): error C3861: 'rand': identifier not found
+  Generating Code...

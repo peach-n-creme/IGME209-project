@@ -42,7 +42,9 @@ void SetMaze(const int** data, int width, int height)
 
 int** GetMaze(int& width, int& height)
 {
-    return nullptr;
+    width = mazeWidth;
+    height = mazeHeight;
+    return mazeData;
 }
 
 void GetNextPosition(int& xpos, int& ypos)
