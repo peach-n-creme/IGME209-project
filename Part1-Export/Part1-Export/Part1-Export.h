@@ -22,3 +22,17 @@ extern PART1EXPORT_API int nPart1Export;
 PART1EXPORT_API int fnPart1Export(void);
 
 PART1EXPORT_API char* GetTeam();
+
+PART1EXPORT_API void SetMaze(const int** data, int width, int height);
+
+PART1EXPORT_API int** GetMaze(int& width, int& height);
+
+PART1EXPORT_API void GetNextPosition(int& xpos, int& ypos);
+
+PART1EXPORT_API void SetStart(int xpos, int ypos);
+
+PART1EXPORT_API void GetStart(int& xpos, int& ypos);
+
+PART1EXPORT_API void SetEnd(int xpos, int ypos);
+
+PART1EXPORT_API void GetEnd(int& xpos, int& ypos);

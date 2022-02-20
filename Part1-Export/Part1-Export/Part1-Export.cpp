@@ -22,6 +22,35 @@ char* GetTeam()
     return (char*)team;
 }
 
+void SetMaze(const int** data, int width, int height)
+{
+}
+
+int** GetMaze(int& width, int& height)
+{
+    return nullptr;
+}
+
+void GetNextPosition(int& xpos, int& ypos)
+{
+}
+
+void SetStart(int xpos, int ypos)
+{
+}
+
+void GetStart(int& xpos, int& ypos)
+{
+}
+
+void SetEnd(int xpos, int ypos)
+{
+}
+
+void GetEnd(int& xpos, int& ypos)
+{
+}
+
 // This is the constructor of a class that has been exported.
 CPart1Export::CPart1Export()
 {
