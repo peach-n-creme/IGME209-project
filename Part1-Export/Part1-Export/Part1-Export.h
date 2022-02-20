@@ -20,3 +20,5 @@ public:
 extern PART1EXPORT_API int nPart1Export;
 
 PART1EXPORT_API int fnPart1Export(void);
+
+PART1EXPORT_API char* GetTeam();

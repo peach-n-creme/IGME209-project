@@ -15,6 +15,13 @@ PART1EXPORT_API int fnPart1Export(void)
     return 0;
 }
 
+const char* team = "Shep and Evan";
+
+char* GetTeam()
+{
+    return (char*)team;
+}
+
 // This is the constructor of a class that has been exported.
 CPart1Export::CPart1Export()
 {
