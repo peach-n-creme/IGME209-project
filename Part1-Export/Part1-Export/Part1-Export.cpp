@@ -21,6 +21,11 @@ int** mazeData;
 int mazeWidth;
 int mazeHeight;
 
+int startPosY;
+int startPosX;
+int endPosY;
+int endPosX;
+
 char* GetTeam()
 {
     return (char*)team;
