@@ -17,7 +17,7 @@ PART1EXPORT_API int fnPart1Export(void)
 
 //variables for the project
 const char* team = "Shep and Evan";
-int** mazeData[4][];
+int** mazeData;
 
 char* GetTeam()
 {
@@ -27,8 +27,6 @@ char* GetTeam()
 void SetMaze(const int** data, int width, int height)
 {
     mazeData = (int**)data;
-    mazeWidth = width;
-    mazeHeight = height;
 }
 
 int** GetMaze(int& width, int& height)
