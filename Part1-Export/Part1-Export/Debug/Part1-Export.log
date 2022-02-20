@@ -1,6 +1,3 @@
-﻿  pch.cpp
-  dllmain.cpp
-  Part1-Export.cpp
-C:\Users\uluru\source\repos\IGME209-project\Part1-Export\Part1-Export\Part1-Export.cpp(52,12): error C3861: 'rand': identifier not found
-C:\Users\uluru\source\repos\IGME209-project\Part1-Export\Part1-Export\Part1-Export.cpp(53,12): error C3861: 'rand': identifier not found
-  Generating Code...
+﻿  Part1-Export.cpp
+     Creating library C:\Users\uluru\Source\Repos\IGME209-project\Part1-Export\Debug\Part1Export.lib and object C:\Users\uluru\Source\Repos\IGME209-project\Part1-Export\Debug\Part1Export.exp
+  Part1-Export.vcxproj -> C:\Users\uluru\Source\Repos\IGME209-project\Part1-Export\Debug\Part1Export.dll

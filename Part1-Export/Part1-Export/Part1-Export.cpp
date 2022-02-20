@@ -76,8 +76,8 @@ void GetStart(int& xpos, int& ypos)
 
 void SetEnd(int xpos, int ypos)
 {
-    endPosX = xpos;
-    endPosY = ypos;
+    xpos = rand();
+    ypos = rand();
 }
 
 void GetEnd(int& xpos, int& ypos)
