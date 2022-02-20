@@ -2,6 +2,8 @@
 //
 
 #include <cstdlib>
+#include <Stdlib.h>
+#include <time.h>
 #include "pch.h"
 #include "framework.h"
 #include "Part1-Export.h"
@@ -26,6 +28,8 @@ int startPosY = -1;
 int startPosX = -1;
 int endPosY = -1;
 int endPosX = -1;
+
+
 
 
 char* GetTeam()
@@ -76,8 +80,8 @@ void GetStart(int& xpos, int& ypos)
 
 void SetEnd(int xpos, int ypos)
 {
-    xpos = rand();
-    ypos = rand();
+    endPosX = xpos;
+    endPosY = ypos;
 }
 
 void GetEnd(int& xpos, int& ypos)

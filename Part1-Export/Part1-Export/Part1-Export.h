@@ -4,6 +4,9 @@
 // that uses this DLL. This way any other project whose source files include this file see
 // PART1EXPORT_API functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
+#include <cstdlib>
+#include <Stdlib.h>
+#include <time.h>
 #ifdef PART1EXPORT_EXPORTS
 #define PART1EXPORT_API __declspec(dllexport)
 #else
