@@ -18,8 +18,10 @@ PART1EXPORT_API int fnPart1Export(void)
 //variables for the project
 const char* team = "Shep and Evan";
 int** mazeData;
-int mazeWidth;
-int mazeHeight;
+int startPosX;
+int startPosY;
+int endPosX = -1;
+int endPosY = -1;
 
 char* GetTeam()
 {
@@ -28,9 +30,6 @@ char* GetTeam()
 
 void SetMaze(const int** data, int width, int height)
 {
-    mazeData = (int**)data;
-    mazeWidth = width;
-    mazeHeight = height;
 }
 
 int** GetMaze(int& width, int& height)
@@ -44,6 +43,8 @@ void GetNextPosition(int& xpos, int& ypos)
 
 void SetStart(int xpos, int ypos)
 {
+    startPosX = xpos;
+    startPosY = ypos;
 }
 
 void GetStart(int& xpos, int& ypos)
@@ -52,6 +53,8 @@ void GetStart(int& xpos, int& ypos)
 
 void SetEnd(int xpos, int ypos)
 {
+    endPosX = xpos;
+    endPosY = ypos;
 }
 
 void GetEnd(int& xpos, int& ypos)
