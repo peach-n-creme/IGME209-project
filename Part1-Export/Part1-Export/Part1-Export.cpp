@@ -1,6 +1,7 @@
 // Part1-Export.cpp : Defines the exported functions for the DLL.
 //
 
+#include <cstdlib>
 #include "pch.h"
 #include "framework.h"
 #include "Part1-Export.h"
@@ -21,10 +22,11 @@ int** mazeData;
 int mazeWidth;
 int mazeHeight;
 
-int startPosY;
-int startPosX;
-int endPosY;
-int endPosX;
+int startPosY = -1;
+int startPosX = -1;
+int endPosY = -1;
+int endPosX = -1;
+
 
 char* GetTeam()
 {
@@ -45,6 +47,8 @@ int** GetMaze(int& width, int& height)
 
 void GetNextPosition(int& xpos, int& ypos)
 {
+    xpos = rand();
+    ypos = rand();
 }
 
 void SetStart(int xpos, int ypos)
@@ -55,6 +59,17 @@ void SetStart(int xpos, int ypos)
 
 void GetStart(int& xpos, int& ypos)
 {
+    if (startPosX == -1 && startPosY == -1)
+    {
+        xpos = -1;
+        ypos = -1;
+    }
+    else
+    {
+        xpos = startPosX;
+        ypos = startPosY;
+    }
+
 }
 
 void SetEnd(int xpos, int ypos)
@@ -65,6 +80,16 @@ void SetEnd(int xpos, int ypos)
 
 void GetEnd(int& xpos, int& ypos)
 {
+    if (endPosX == -1 && endPosY == -1)
+    {
+        xpos = -1;
+        ypos = -1;
+    }
+    else
+    {
+        xpos = endPosX;
+        ypos = endPosY;
+    }
 }
 
 // This is the constructor of a class that has been exported.
