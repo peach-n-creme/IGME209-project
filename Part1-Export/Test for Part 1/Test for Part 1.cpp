@@ -21,16 +21,45 @@ namespace TestforPart1
 	TEST_CLASS(TestforPart1)
 	{
 	public:
-
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(GetTeam)
 		{
-			int** mazeData[3][3];
-			int height = 3;
-			int width = 3;
-			SetMaze((const int**)mazeData, 4, 4);
-			GetMaze(height, width);
-			printf("%d \n", height);
-			printf("%d \n", width);
+			char* team = GetTeam();
+			Assert::AreEqual("Shep and Evan", team);
+		}
+
+		TEST_METHOD(SetMaze)
+		{
+			Assert::AreEqual();
+		}
+
+		TEST_METHOD(GetMaze)
+		{
+			Assert::AreEqual();
+		}
+
+		TEST_METHOD(GetNextPosition)
+		{
+			Assert::AreEqual();
+		}
+
+		TEST_METHOD(SetStart)
+		{
+			Assert::AreEqual();
+		}
+
+		TEST_METHOD(GetStart)
+		{
+			Assert::AreEqual();
+		}
+
+		TEST_METHOD(SetEnd)
+		{
+			Assert::AreEqual();
+		}
+
+		TEST_METHOD(GetEnd)
+		{
+			Assert::AreEqual();
 		}
 	};
 }
