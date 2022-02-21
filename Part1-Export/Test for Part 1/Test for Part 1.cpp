@@ -22,11 +22,59 @@ namespace TestforPart1
 	{
 	public:
 
-		TEST_METHOD(GetTeam)
+		TEST_METHOD(TestGetTeam)
 		{
 			char* test = GetTeam();
 			char* expected = "Shep and Evan";
-			Assert::AreEqual(test, expected);
+			Assert::AreEqual(strcmp(test, expected), 0);
+		}
+		TEST_METHOD(TestSetandGetMaze)
+		{
+			int height = 4;
+			int width = 4;
+			int** maze = new int* [width];
+			int value = 0;
+			for (size_t i = 0; i < width; i++)
+			{
+				maze[i] = new int[height];
+				for (size_t j = 0; j < height; j++)
+				{
+					maze[i][j] = value++;
+				}
+			}
+			SetMaze((const int**)maze, width, height);
+			
+			Assert::IsTrue(GetMaze(width, height) == maze);
+		}
+		TEST_METHOD(TestGetNextPosition)
+		{
+			int xpos = -1;
+			int ypos = -1;
+			GetNextPosition(xpos, ypos);
+			Assert::AreNotEqual(xpos, -1);
+			Assert::AreNotEqual(ypos, -1);
+		}
+		TEST_METHOD(TestSetandGetStart)
+		{
+			int xpos = 4;
+			int ypos = 4;
+			int xpos2 = 3;
+			int ypos2 = 3;
+			SetStart(xpos, ypos);
+			GetStart(xpos2, ypos2);
+			Assert::AreEqual(xpos, xpos2);
+			Assert::AreEqual(ypos, ypos2);
+		}
+		TEST_METHOD(TestSetandGetEnd)
+		{
+			int xpos = 4;
+			int ypos = 4;
+			int xpos2 = 3;
+			int ypos2 = 3;
+			SetEnd(xpos, ypos);
+			GetEnd(xpos2, ypos2);
+			Assert::AreEqual(xpos, xpos2);
+			Assert::AreEqual(ypos, ypos2);
 		}
 	};
 }
