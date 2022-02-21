@@ -22,7 +22,7 @@ namespace TestforPart1
 	{
 	public:
 
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(GetTeam)
 		{
 			char* test = GetTeam();
 			char* expected = "Shep and Evan";
