@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MileStone1 Part 2",
+    "\\MileStone1 Part 2\\MileStone1 Part 2",
+    "\\Part1-Export",
+    "\\Part1-Export\\Part1-Export"
   ],
-  "SelectedNode": "\\MileStone1 Part 2.sln",
+  "SelectedNode": "\\MileStone1 Part 2\\MileStone1 Part 2\\MileStone1 Part 2.cpp",
   "PreviewInSolutionExplorer": false
 }

@@ -1,5 +1,9 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+#include <cstdlib>
+#include <Stdlib.h>
+#include <time.h>
+#include <cstdio>
 
 __declspec(dllimport) char* GetTeam();
 __declspec(dllimport) void SetMaze(const int** data, int width, int height);
@@ -20,6 +24,13 @@ namespace MileStone1Part2
 		
 		TEST_METHOD(TestMethod1)
 		{
+			int** mazeData[3][3];
+			int height = 3;
+			int width = 3;
+			SetMaze((const int**)mazeData, 4, 4);
+			GetMaze(height, width);
+			printf("%d \n", height);
+			printf("%d \n", width);
 		}
 	};
 }
