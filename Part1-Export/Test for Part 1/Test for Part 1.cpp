@@ -24,13 +24,9 @@ namespace TestforPart1
 
 		TEST_METHOD(TestMethod1)
 		{
-			int** mazeData[3][3];
-			int height = 3;
-			int width = 3;
-			SetMaze((const int**)mazeData, 4, 4);
-			GetMaze(height, width);
-			printf("%d \n", height);
-			printf("%d \n", width);
+			char* test = GetTeam();
+			char* expected = "Shep and Evan";
+			Assert::AreEqual(test, expected);
 		}
 	};
 }
