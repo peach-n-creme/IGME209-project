@@ -21,45 +21,12 @@ namespace TestforPart1
 	TEST_CLASS(TestforPart1)
 	{
 	public:
-		TEST_METHOD(GetTeam)
-		{
-			char* team = GetTeam();
-			Assert::AreEqual("Shep and Evan", team);
-		}
 
-		TEST_METHOD(SetMaze)
+		TEST_METHOD(TestMethod1)
 		{
-			Assert::AreEqual();
-		}
-
-		TEST_METHOD(GetMaze)
-		{
-			Assert::AreEqual();
-		}
-
-		TEST_METHOD(GetNextPosition)
-		{
-			Assert::AreEqual();
-		}
-
-		TEST_METHOD(SetStart)
-		{
-			Assert::AreEqual();
-		}
-
-		TEST_METHOD(GetStart)
-		{
-			Assert::AreEqual();
-		}
-
-		TEST_METHOD(SetEnd)
-		{
-			Assert::AreEqual();
-		}
-
-		TEST_METHOD(GetEnd)
-		{
-			Assert::AreEqual();
+			char* test = GetTeam();
+			char* expected = "Shep and Evan";
+			Assert::AreEqual(test, expected);
 		}
 	};
 }
