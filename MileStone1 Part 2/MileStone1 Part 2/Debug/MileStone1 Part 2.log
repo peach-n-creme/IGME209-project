@@ -1,0 +1,5 @@
+﻿  MileStone1 Part 2.cpp
+     Creating library C:\Users\uluru\Source\Repos\IGME209-project\MileStone1 Part 2\Debug\MileStone1 Part 2.lib and object C:\Users\uluru\Source\Repos\IGME209-project\MileStone1 Part 2\Debug\MileStone1 Part 2.exp
+MileStone1 Part 2.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) void __cdecl SetMaze(int const * *,int,int)" (__imp_?SetMaze@@YAXPAPBHHH@Z) referenced in function "public: void __thiscall MileStone1Part2::MileStone1Part2::TestMethod1(void)" (?TestMethod1@MileStone1Part2@1@QAEXXZ)
+MileStone1 Part 2.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) int * * __cdecl GetMaze(int &,int &)" (__imp_?GetMaze@@YAPAPAHAAH0@Z) referenced in function "public: void __thiscall MileStone1Part2::MileStone1Part2::TestMethod1(void)" (?TestMethod1@MileStone1Part2@1@QAEXXZ)
+C:\Users\uluru\Source\Repos\IGME209-project\MileStone1 Part 2\Debug\MileStone1 Part 2.dll : fatal error LNK1120: 2 unresolved externals

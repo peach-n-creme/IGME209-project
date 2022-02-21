@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "Part1-Export.h"
 #include <cstdlib>
 #include <Stdlib.h>
 #include <time.h>
