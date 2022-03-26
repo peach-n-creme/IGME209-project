@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Part1-Export",
+    "\\Part1-Export\\Part1-Export",
+    "\\Part1-Export\\Test for Part 1"
   ],
-  "SelectedNode": "\\Part1-Export.sln",
+  "SelectedNode": "\\Part1-Export\\Part1-Export\\Part1-Export.cpp",
   "PreviewInSolutionExplorer": false
 }
