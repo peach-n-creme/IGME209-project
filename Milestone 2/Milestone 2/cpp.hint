@@ -1,0 +1,2 @@
+#define MILESTONE2_API __declspec(dllexport)
+#define MILESTONE2_API __declspec(dllimport)
