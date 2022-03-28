@@ -39,13 +39,30 @@ bool SetMaze(const int** data, int width, int height)
     mazeData = (int**)data;
     mazeWidth = width;
     mazeHeight = height;
+
+    if (mazeWidth > 0 && mazeHeight > 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 int** GetMaze(int& width, int& height)
 {
     width = mazeWidth;
     height = mazeHeight;
-    return mazeData;
+
+    if (mazeData == NULL) 
+    {
+        return nullptr;
+    }
+    else
+    {
+        return mazeData;
+    }
 }
 
 bool GetNextPosition(int& xpos, int& ypos)
@@ -58,6 +75,15 @@ bool SetStart(int xpos, int ypos)
 {
     startPosX = xpos;
     startPosY = ypos;
+
+    if ()
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool GetStart(int& xpos, int& ypos)
