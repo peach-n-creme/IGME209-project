@@ -55,7 +55,7 @@ int** GetMaze(int& width, int& height)
     width = mazeWidth;
     height = mazeHeight;
 
-    if (mazeData == NULL) 
+    if (mazeWidth > 0 && mazeHeight > 0)
     {
         return nullptr;
     }
@@ -67,7 +67,7 @@ int** GetMaze(int& width, int& height)
 
 bool GetNextPosition(int& xpos, int& ypos)
 {
-    if()
+    if(xpos < 0 || ypos < 0)
     {
         return false;
     }
@@ -113,7 +113,7 @@ bool SetEnd(int xpos, int ypos)
 {
     endPosX = xpos;
     endPosY = ypos;
-    if ()
+    if (endPosX == xpos && endPosY == ypos && endPosX >= 0 && endPosY >= 0)
     {
         return true;
     }
@@ -125,7 +125,7 @@ bool SetEnd(int xpos, int ypos)
 
 bool GetEnd(int& xpos, int& ypos)
 {
-    if ()
+    if (endPosX == xpos && endPosY == ypos && endPosX >= 0 && endPosY >= 0)
     {
         return true;
     }
@@ -137,7 +137,7 @@ bool GetEnd(int& xpos, int& ypos)
 
 bool Restart()
 {
-
+    return false;
 }
 
 // This is the constructor of a class that has been exported.
