@@ -67,8 +67,16 @@ int** GetMaze(int& width, int& height)
 
 bool GetNextPosition(int& xpos, int& ypos)
 {
-    xpos = rand();
-    ypos = rand();
+    if()
+    {
+        return false;
+    }
+    else
+    {
+        xpos = rand();
+        ypos = rand();
+        return true;
+    }
 }
 
 bool SetStart(int xpos, int ypos)
