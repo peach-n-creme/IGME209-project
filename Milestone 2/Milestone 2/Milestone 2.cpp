@@ -24,10 +24,10 @@ int** mazeData;
 int mazeWidth;
 int mazeHeight;
 
-int startPosY = -1;
-int startPosX = -1;
-int endPosY = -1;
-int endPosX = -1;
+int startPosY;
+int startPosX;
+int endPosY;
+int endPosX;
 
 char* GetTeam()
 {
