@@ -24,10 +24,10 @@ int** mazeData;
 int mazeWidth;
 int mazeHeight;
 
-int startPosY = -1;
-int startPosX = -1;
-int endPosY = -1;
-int endPosX = -1;
+int startPosY;
+int startPosX;
+int endPosY;
+int endPosX;
 
 char* GetTeam()
 {
@@ -98,13 +98,13 @@ bool GetStart(int& xpos, int& ypos)
 {
     if (startPosX == xpos && startPosY == ypos && startPosX >= 0 && startPosY >= 0)
     {
-        xpos = -1;
-        ypos = -1;
+        xpos = startPosX;
+        ypos = startPosY;
+        return true;
     }
     else
     {
-        xpos = startPosX;
-        ypos = startPosY;
+        return false;
     }
 
 }
@@ -113,19 +113,25 @@ bool SetEnd(int xpos, int ypos)
 {
     endPosX = xpos;
     endPosY = ypos;
+    if ()
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool GetEnd(int& xpos, int& ypos)
 {
-    if (endPosX == -1 && endPosY == -1)
+    if ()
     {
-        xpos = -1;
-        ypos = -1;
+        return true;
     }
     else
     {
-        xpos = endPosX;
-        ypos = endPosY;
+        return false;
     }
 }
 
