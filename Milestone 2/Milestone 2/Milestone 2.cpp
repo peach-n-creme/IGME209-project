@@ -113,19 +113,25 @@ bool SetEnd(int xpos, int ypos)
 {
     endPosX = xpos;
     endPosY = ypos;
+    if ()
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool GetEnd(int& xpos, int& ypos)
 {
-    if (endPosX == -1 && endPosY == -1)
+    if ()
     {
-        xpos = -1;
-        ypos = -1;
+        return true;
     }
     else
     {
-        xpos = endPosX;
-        ypos = endPosY;
+        return false;
     }
 }
 
