@@ -84,7 +84,7 @@ bool SetStart(int xpos, int ypos)
     startPosX = xpos;
     startPosY = ypos;
 
-    if ()
+    if()
     {
         return true;
     }
@@ -96,15 +96,15 @@ bool SetStart(int xpos, int ypos)
 
 bool GetStart(int& xpos, int& ypos)
 {
-    if (startPosX == -1 && startPosY == -1)
-    {
-        xpos = -1;
-        ypos = -1;
-    }
-    else
+    if ()
     {
         xpos = startPosX;
         ypos = startPosY;
+        return true;
+    }
+    else
+    {
+        return false;
     }
 
 }
