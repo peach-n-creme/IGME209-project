@@ -1,10 +1,18 @@
 #include "pch.h"
 #include "Vertex_Class.h"
 
+Vertex::Vertex()
+{
+	xPos = 0;
+	yPos = 0;
+	movementCost = 0;
+	visited = false;
+}
+
 Vertex::Vertex(int xpos, int ypos, int movecost)
 {
-	int xPos = xpos;
-	int yPos = ypos;
-	int movementCost = movecost;
-	bool visited = false;
+	xPos = xpos;
+	yPos = ypos;
+	movementCost = movecost;
+	visited = false;
 }
