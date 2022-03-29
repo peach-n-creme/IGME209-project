@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-class Graph {
-public:
+Graph::Graph()
+{
 	vector<Vertex> verticies;
-};
+}
