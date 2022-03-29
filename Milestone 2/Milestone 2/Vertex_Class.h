@@ -2,9 +2,11 @@
 
 class Vertex {
 public:
+	Vertex();
+	Vertex(int xpos, int ypos, int movecost);
+
 	int xPos;
 	int yPos;
-	int heuristic;
-	int lowestCost;
+	int movementCost;
 	bool visited;
 };
