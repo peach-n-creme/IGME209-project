@@ -1,5 +1,5 @@
 #pragma once
-class Graph_Class
+class Graph
 {
 };
 
