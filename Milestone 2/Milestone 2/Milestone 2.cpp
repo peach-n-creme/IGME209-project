@@ -7,6 +7,8 @@
 #include "pch.h"
 #include "framework.h"
 #include "Milestone 2.h"
+#include "Graph_Class.h"
+#include "Vertex_Class.h"
 
 
 // This is an example of an exported variable
@@ -28,6 +30,7 @@ int startPosY;
 int startPosX;
 int endPosY;
 int endPosX;
+
 
 char* GetTeam()
 {

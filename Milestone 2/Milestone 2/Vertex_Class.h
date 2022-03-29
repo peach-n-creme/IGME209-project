@@ -1,5 +1,5 @@
 #pragma once
-class Vertex_Class
+class Vertex
 {
 };
 
