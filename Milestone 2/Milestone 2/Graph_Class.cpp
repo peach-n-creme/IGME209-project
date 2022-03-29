@@ -6,5 +6,5 @@ using namespace std;
 
 Graph::Graph()
 {
-	vector<Vertex> verticies;
+	vector<Vertex>* verticies;
 }
