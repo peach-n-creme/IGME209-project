@@ -1,23 +1,36 @@
 #include "pch.h"
 #include "Graph_Class.h"
 #include "Vertex_Class.h"
+#include <math.h>
 #include <vector>
 #include <list>
 using namespace std;
 
 Graph::Graph()
 {
+	vertices;
 	width = 0;
 	height = 0;
 	data = NULL;
+	blankVertex = NULL;
+	adjacency = NULL;
+	startX = -1;
+	startY = -1;
+	endX = -1;
+	endY = -1;
+	bestPath;
 }
 
-Graph::Graph(int mazeWidth, int mazeHeight, int** mazeData)
+Graph::Graph(int mazeWidth, int mazeHeight, int** mazeData, int startPosX, int startPosY, int endPosX, int endPosY)
 {
 	width = mazeWidth;
 	height = mazeHeight;
 	data = mazeData;
+	vertices;
+	bestPath;
 	Arrange();
+	Pathfind(startPosX, startPosY, endPosX, endPosY);
+	makeList(endPosX, endPosY);
 }
 
 void Graph::Arrange()
@@ -69,6 +82,15 @@ void Graph::Arrange()
 
 void Graph::Pathfind(int startX, int startY, int endX, int endY)
 {
+	//find heuristic
+	int heuristic = 0;
+
+	if (startX > -1 && startY > -1 && endX > -1 && endY > -1)
+	{
+		heuristic = round(sqrt(pow(abs(startX - endX), 2) + pow(abs(startY - endY), 2)));
+	}
+	
+
 	for (int b = 0; b < height; b++)
 	{
 		for (int a = 0; a < height; a++)
@@ -77,6 +99,7 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 			vertices[a][b].parent = nullptr;
 		}
 	}
+
 
 	//starting conditions
 	Vertex *current = &vertices[startX][startY];
@@ -94,8 +117,7 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 	//actual pathfinding loop
 	while (!unTestedNodes.empty())
 	{
-		//sort untested nobes gy global goal, so lowest first (need to fix)
-		unTestedNodes.sort();
+		//might need sort, if so need to figure out how too
 
 		//front of listNotTestedNodes is potentially the lowest distance node. Our list may also contian nodes that have been visited, so ditch these
 		while (!unTestedNodes.empty() && unTestedNodes.front()->visited)
@@ -113,22 +135,22 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 		current->visited = true;
 
 
-		//check current node for negihbors
+		//check current node for neighbors
 		if (vertices[current->xPos + 1][current->yPos].movementCost == 1)
 		{
-			unTestedNodes.push_back(&vertices[current->xPos + 1][current->yPos]);
+			neighborNodes.push_back(&vertices[current->xPos + 1][current->yPos]);
 		}
 		else if (vertices[current->xPos - 1][current->yPos].movementCost == 1)
 		{
-			unTestedNodes.push_back(&vertices[current->xPos - 1][current->yPos]);
+			neighborNodes.push_back(&vertices[current->xPos - 1][current->yPos]);
 		}
 		else if (vertices[current->xPos][current->yPos + 1].movementCost == 1)
 		{
-			unTestedNodes.push_back(&vertices[current->xPos][current->yPos + 1]);
+			neighborNodes.push_back(&vertices[current->xPos][current->yPos + 1]);
 		}
 		else if (vertices[current->xPos][current->yPos - 1].movementCost == 1)
 		{
-			unTestedNodes.push_back(&vertices[current->xPos][current->yPos - 1]);
+			neighborNodes.push_back(&vertices[current->xPos][current->yPos - 1]);
 		}
 
 
@@ -152,10 +174,35 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 			{
 				neighbourNode->parent = current;
 				neighbourNode->localGoal = possibleLowestGoal;
-				neighbourNode->globalGoal;
+				neighbourNode->globalGoal = possibleLowestGoal + heuristic;
 			}
 			//remove the neighbor node we looked at
 			neighborNodes.pop_front();
 		}
+	}
+}
+
+void Graph::makeList(int endX, int endY)
+{
+	Vertex* current = &vertices[endX][endY];
+	while (current->parent != nullptr)
+	{
+		bestPath.push_front(current);
+		current = current->parent;
+	}
+}
+
+Vertex* Graph::nextPosition()
+{
+	Vertex* current;
+	if(bestPath.empty())
+	{
+		return NULL;
+	}
+	else
+	{
+		current = bestPath.front();
+		bestPath.pop_front();
+		return current;
 	}
 }

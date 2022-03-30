@@ -51,7 +51,6 @@ bool SetMaze(const int** data, int width, int height)
     }
     else
     {
-        mazeGraph = new Graph(width, height, mazeData);
         return true;
     }
 }
@@ -67,20 +66,23 @@ int** GetMaze(int& width, int& height)
     }
     else
     {
+        mazeGraph = new Graph(mazeWidth, mazeHeight, mazeData, startPosX, startPosY, endPosX, endPosY);
         return mazeData;
     }
 }
 
 bool GetNextPosition(int& xpos, int& ypos)
 {
-    if(xpos < 0 || ypos < 0)
+    Vertex* current;
+    current = mazeGraph->nextPosition();
+    if(xpos < 0 || ypos < 0 || current == NULL)
     {
         return false;
     }
     else
     {
-        xpos = rand();
-        ypos = rand();
+        xpos = current->xPos;
+        ypos = current->yPos;
         return true;
     }
 }
