@@ -1,3 +1,15 @@
-﻿  Milestone 2.cpp
-     Creating library C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Debug\Milestone2.lib and object C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Debug\Milestone2.exp
-  Milestone 2.vcxproj -> C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Debug\Milestone2.dll
+﻿  Graph_Class.cpp
+C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(38,31): error C2664: 'void std::vector<Vertex,std::allocator<Vertex>>::push_back(const _Ty &)': cannot convert argument 1 from 'std::vector<Vertex,std::allocator<Vertex>>' to 'const _Ty &'
+          with
+          [
+              _Ty=Vertex
+          ]
+C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(38,31): message : Reason: cannot convert from 'std::vector<Vertex,std::allocator<Vertex>>' to 'const _Ty'
+          with
+          [
+              _Ty=Vertex
+          ]
+C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(38,22): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\vector(716,10): message : see declaration of 'std::vector<Vertex,std::allocator<Vertex>>::push_back'
+  Milestone 2.cpp
+  Generating Code...
