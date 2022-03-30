@@ -6,16 +6,16 @@ using namespace std;
 
 Graph::Graph()
 {
-	vector<Vertex> verticies;
 	width = 0;
 	height = 0;
+	data = NULL;
 }
 
-Graph::Graph(int mazeWidth, int mazeHeight)
+Graph::Graph(int mazeWidth, int mazeHeight, int** mazeData)
 {
-	vector<Vertex> verticies;
 	width = mazeWidth;
 	height = mazeHeight;
+	data = mazeData;
 	
 }
 
@@ -23,9 +23,17 @@ void Graph::Arrange()
 {
 	for (int b = 0; b < height; b++)
 	{
+		vector<Vertex> vertexRow;
+
+
 		for (int a = 0; a < width; a++)
 		{
-
+			if (data[a][b] == 0)
+			{
+				blankVertex = new Vertex(a, b, 1);
+				vertexRow.push_back(*blankVertex);
+			}
 		}
+		vertices.push_back(vertexRow);
 	}
 }
