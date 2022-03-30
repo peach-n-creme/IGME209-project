@@ -7,6 +7,9 @@ Vertex::Vertex()
 	yPos = 0;
 	movementCost = 0;
 	visited = false;
+	parent = nullptr;
+	localGoal = 0;
+	globalGoal = 0;
 }
 
 Vertex::Vertex(int xpos, int ypos, int movecost)
@@ -15,4 +18,7 @@ Vertex::Vertex(int xpos, int ypos, int movecost)
 	yPos = ypos;
 	movementCost = movecost;
 	visited = false;
+	parent = nullptr;
+	localGoal = 0;
+	globalGoal = 0;
 }

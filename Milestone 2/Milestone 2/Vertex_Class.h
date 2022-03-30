@@ -1,4 +1,6 @@
 #pragma once
+#include "pch.h"
+#include "Vertex_Class.h"
 
 class Vertex {
 public:
@@ -9,4 +11,7 @@ public:
 	int yPos;
 	int movementCost;
 	bool visited;
+	Vertex* parent;
+	int localGoal;
+	int globalGoal;
 };

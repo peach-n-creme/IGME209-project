@@ -31,6 +31,8 @@ int startPosX;
 int endPosY;
 int endPosX;
 
+Graph* mazeGraph;
+
 
 char* GetTeam()
 {
@@ -45,11 +47,12 @@ bool SetMaze(const int** data, int width, int height)
 
     if (mazeWidth > 0 && mazeHeight > 0)
     {
-        return true;
+        return false;
     }
     else
     {
-        return false;
+        mazeGraph = new Graph(width, height, mazeData);
+        return true;
     }
 }
 
