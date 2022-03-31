@@ -1,0 +1,10 @@
+﻿  Graph_Class.cpp
+C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(90,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(158,38): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(170,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(176,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\Milestone 2\Graph_Class.cpp(177,52): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Milestone 2.cpp
+  Generating Code...
+     Creating library C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\x64\Debug\Milestone2.lib and object C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\x64\Debug\Milestone2.exp
+  Milestone 2.vcxproj -> C:\Users\User\Documents\GitHub\IGME209-project\Milestone 2\x64\Debug\Milestone2.dll
