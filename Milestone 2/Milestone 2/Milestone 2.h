@@ -7,6 +7,8 @@
 #include <cstdlib>
 #include <Stdlib.h>
 #include <time.h>
+#include <iostream>
+using namespace std;
 #ifdef MILESTONE2_EXPORTS
 #define MILESTONE2_API __declspec(dllexport)
 #else

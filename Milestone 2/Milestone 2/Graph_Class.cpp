@@ -4,11 +4,12 @@
 #include <math.h>
 #include <vector>
 #include <list>
+#include <iostream>
 using namespace std;
 
 Graph::Graph()
 {
-	vertices;
+	//vertices;
 	width = 0;
 	height = 0;
 	data = NULL;
@@ -18,7 +19,7 @@ Graph::Graph()
 	startY = -1;
 	endX = -1;
 	endY = -1;
-	bestPath;
+	//bestPath;
 }
 
 Graph::Graph(int mazeWidth, int mazeHeight, int** mazeData, int startPosX, int startPosY, int endPosX, int endPosY)
@@ -26,8 +27,8 @@ Graph::Graph(int mazeWidth, int mazeHeight, int** mazeData, int startPosX, int s
 	width = mazeWidth;
 	height = mazeHeight;
 	data = mazeData;
-	vertices;
-	bestPath;
+	//vertices;
+	//bestPath;
 	Arrange();
 	Pathfind(startPosX, startPosY, endPosX, endPosY);
 	makeList(endPosX, endPosY);
@@ -38,7 +39,7 @@ void Graph::Arrange()
 	//setting up vertex 2d matrix
 	for (int b = 0; b < height; b++)
 	{
-		vector<Vertex> vertexRow;
+		vector<Vertex*> vertexRow;
 
 
 		for (int a = 0; a < width; a++)
@@ -46,7 +47,7 @@ void Graph::Arrange()
 			if (data[a][b] == 0)
 			{
 				blankVertex = new Vertex(a, b, 1);
-				vertexRow.push_back(*blankVertex);
+				vertexRow.push_back(blankVertex);
 			}
 		}
 		vertices.push_back(vertexRow);
@@ -57,21 +58,21 @@ void Graph::Arrange()
 	{
 		for (int a = 0; a < width; a++)
 		{
-			if (vertices[a][b].movementCost == 1)
+			if (vertices[a][b]->movementCost == 1)
 			{
-				if (vertices[a + 1][b].movementCost == 1)
+				if (vertices[a + 1][b]->movementCost == 1)
 				{
 					adjacency[a, b] = 1;
 				}
-				else if (vertices[a - 1][b].movementCost == 1)
+				else if (vertices[a - 1][b]->movementCost == 1)
 				{
 					adjacency[a, b] = 1;
 				}
-				else if (vertices[a][b + 1].movementCost == 1)
+				else if (vertices[a][b + 1]->movementCost == 1)
 				{
 					adjacency[a, b] = 1;
 				}
-				else if (vertices[a][b - 1].movementCost == 1)
+				else if (vertices[a][b - 1]->movementCost == 1)
 				{
 					adjacency[a, b] = 1;
 				}
@@ -95,14 +96,14 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 	{
 		for (int a = 0; a < height; a++)
 		{
-			vertices[a][b].visited = false;
-			vertices[a][b].parent = nullptr;
+			vertices[a][b]->visited = false;
+			vertices[a][b]->parent = nullptr;
 		}
 	}
 
 
 	//starting conditions
-	Vertex *current = &vertices[startX][startY];
+	Vertex *current = vertices[startX][startY];
 	current->localGoal = 0;
 	current->globalGoal = 0;
 	Vertex* neighbourNode;
@@ -136,21 +137,21 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 
 
 		//check current node for neighbors
-		if (vertices[current->xPos + 1][current->yPos].movementCost == 1)
+		if (vertices[current->xPos + 1][current->yPos]->movementCost == 1)
 		{
-			neighborNodes.push_back(&vertices[current->xPos + 1][current->yPos]);
+			neighborNodes.push_back(vertices[current->xPos + 1][current->yPos]);
 		}
-		else if (vertices[current->xPos - 1][current->yPos].movementCost == 1)
+		else if (vertices[current->xPos - 1][current->yPos]->movementCost == 1)
 		{
-			neighborNodes.push_back(&vertices[current->xPos - 1][current->yPos]);
+			neighborNodes.push_back(vertices[current->xPos - 1][current->yPos]);
 		}
-		else if (vertices[current->xPos][current->yPos + 1].movementCost == 1)
+		else if (vertices[current->xPos][current->yPos + 1]->movementCost == 1)
 		{
-			neighborNodes.push_back(&vertices[current->xPos][current->yPos + 1]);
+			neighborNodes.push_back(vertices[current->xPos][current->yPos + 1]);
 		}
-		else if (vertices[current->xPos][current->yPos - 1].movementCost == 1)
+		else if (vertices[current->xPos][current->yPos - 1]->movementCost == 1)
 		{
-			neighborNodes.push_back(&vertices[current->xPos][current->yPos - 1]);
+			neighborNodes.push_back(vertices[current->xPos][current->yPos - 1]);
 		}
 
 
@@ -184,7 +185,7 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 
 void Graph::makeList(int endX, int endY)
 {
-	Vertex* current = &vertices[endX][endY];
+	Vertex* current = vertices[endX][endY];
 	while (current->parent != nullptr)
 	{
 		bestPath.push_front(current);
@@ -202,6 +203,7 @@ Vertex* Graph::nextPosition()
 	else
 	{
 		current = bestPath.front();
+		cout << current;
 		bestPath.pop_front();
 		return current;
 	}

@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\User\Documents\GitHub\IGME209-project\Part1-Export\Debug\Part1Export.dll</FullPath>
+      <FullPath>C:\Users\uluru\source\repos\IGME209-project\Part1-Export\Debug\Part1Export.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\User\Documents\GitHub\IGME209-project\Part1-Export\Debug\Test for Part 1.dll</FullPath>
+      <FullPath>C:\Users\uluru\source\repos\IGME209-project\Part1-Export\Debug\Test for Part 1.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
