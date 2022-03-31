@@ -4,11 +4,13 @@
 #include <cstdlib>
 #include <Stdlib.h>
 #include <time.h>
+#include <iostream>
 #include "pch.h"
 #include "framework.h"
 #include "Milestone 2.h"
 #include "Graph_Class.h"
 #include "Vertex_Class.h"
+using namespace std;
 
 
 // This is an example of an exported variable
@@ -31,8 +33,7 @@ int startPosX;
 int endPosY;
 int endPosX;
 
-Graph* mazeGraph;
-
+Graph* mazeGraph = NULL;
 
 char* GetTeam()
 {
@@ -47,11 +48,13 @@ bool SetMaze(const int** data, int width, int height)
 
     if (mazeWidth > 0 && mazeHeight > 0)
     {
-        return false;
+        cout << "setmaze worked\n";
+        return true;
     }
     else
     {
-        return true;
+        cout << "setmaze failed\n";
+        return false;
     }
 }
 
@@ -62,25 +65,32 @@ int** GetMaze(int& width, int& height)
 
     if (mazeWidth > 0 && mazeHeight > 0)
     {
-        return nullptr;
+        cout << "getmaze worked\n";
+        return mazeData;
     }
     else
     {
-        mazeGraph = new Graph(mazeWidth, mazeHeight, mazeData, startPosX, startPosY, endPosX, endPosY);
-        return mazeData;
+        cout << "getmaze failed\n";
+        return nullptr;
     }
 }
 
 bool GetNextPosition(int& xpos, int& ypos)
 {
+    if (mazeGraph == NULL)
+    {
+        mazeGraph = new Graph(mazeWidth, mazeHeight, mazeData, startPosX, startPosY, endPosX, endPosY);
+    }
     Vertex* current;
     current = mazeGraph->nextPosition();
     if(xpos < 0 || ypos < 0 || current == NULL)
     {
+        cout << "getnextposition failed\n";
         return false;
     }
     else
     {
+        cout << "getnextposition worked\n";
         xpos = current->xPos;
         ypos = current->yPos;
         return true;
@@ -92,26 +102,30 @@ bool SetStart(int xpos, int ypos)
     startPosX = xpos;
     startPosY = ypos;
 
-    if (startPosX == xpos && startPosY == ypos && startPosX >=0 && startPosY >= 0)
+    if (startPosX == xpos && startPosY == ypos && startPosX >= 0 && startPosY >= 0)
     {
+        cout << "setstart worked\n";
         return true;
     }
     else
     {
+        cout << "setstart failed\n";
         return false;
     }
 }
 
 bool GetStart(int& xpos, int& ypos)
 {
+    xpos = startPosX;
+    ypos = startPosY;
     if (startPosX == xpos && startPosY == ypos && startPosX >= 0 && startPosY >= 0)
     {
-        xpos = startPosX;
-        ypos = startPosY;
+        cout << "getstart worked\n";
         return true;
     }
     else
     {
+        cout << "getstart failed\n";
         return false;
     }
 
@@ -123,29 +137,36 @@ bool SetEnd(int xpos, int ypos)
     endPosY = ypos;
     if (endPosX == xpos && endPosY == ypos && endPosX >= 0 && endPosY >= 0)
     {
+        cout << "setend worked\n";
         return true;
     }
     else
     {
+        cout << "setend failed\n";
         return false;
     }
 }
 
 bool GetEnd(int& xpos, int& ypos)
 {
+    xpos = endPosX;
+    ypos = endPosY;
     if (endPosX == xpos && endPosY == ypos && endPosX >= 0 && endPosY >= 0)
     {
+        cout << "getend worked\n";
         return true;
     }
     else
     {
+        cout << "getend failed\n";
         return false;
     }
 }
 
 bool Restart()
 {
-    return false;
+    mazeGraph = new Graph(mazeWidth, mazeHeight, mazeData, startPosX, startPosY, endPosX, endPosY);
+    return true;
 }
 
 // This is the constructor of a class that has been exported.

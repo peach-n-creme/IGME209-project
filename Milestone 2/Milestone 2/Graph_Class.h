@@ -5,6 +5,7 @@
 #include <math.h>
 #include <vector>
 #include <list>
+#include <iostream>
 using namespace std;
 
 class Graph
@@ -18,7 +19,7 @@ public:
 	void makeList(int endX, int endY);
 	Vertex* nextPosition();
 
-	std::vector<vector<Vertex>> vertices;
+	vector<vector<Vertex*>> vertices;
 	int height;
 	int width;
 	int** data;
