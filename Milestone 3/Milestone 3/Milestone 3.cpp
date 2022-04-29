@@ -35,12 +35,12 @@ int endPosX;
 
 Graph* mazeGraph = NULL;
 
-char* GetTeam()
+extern "C" __declspec(dllexport) char* GetTeam()
 {
     return (char*)team;
 }
 
-bool SetMaze(const int** data, int width, int height)
+extern "C" __declspec(dllexport) bool SetMaze(const int** data, int width, int height)
 {
     mazeData = (int**)data;
     mazeWidth = width;
@@ -58,7 +58,7 @@ bool SetMaze(const int** data, int width, int height)
     }
 }
 
-int** GetMaze(int& width, int& height)
+extern "C" __declspec(dllexport) int** GetMaze(int& width, int& height)
 {
     width = mazeWidth;
     height = mazeHeight;
@@ -75,7 +75,7 @@ int** GetMaze(int& width, int& height)
     }
 }
 
-bool GetNextPosition(int& xpos, int& ypos)
+extern "C" __declspec(dllexport) bool GetNextPosition(int& xpos, int& ypos)
 {
     if (mazeGraph == NULL)
     {
@@ -97,7 +97,7 @@ bool GetNextPosition(int& xpos, int& ypos)
     }
 }
 
-bool SetStart(int xpos, int ypos)
+extern "C" __declspec(dllexport) bool SetStart(int xpos, int ypos)
 {
     startPosX = xpos;
     startPosY = ypos;
@@ -114,7 +114,7 @@ bool SetStart(int xpos, int ypos)
     }
 }
 
-bool GetStart(int& xpos, int& ypos)
+extern "C" __declspec(dllexport) bool GetStart(int& xpos, int& ypos)
 {
     xpos = startPosX;
     ypos = startPosY;
@@ -131,7 +131,7 @@ bool GetStart(int& xpos, int& ypos)
 
 }
 
-bool SetEnd(int xpos, int ypos)
+extern "C" __declspec(dllexport) bool SetEnd(int xpos, int ypos)
 {
     endPosX = xpos;
     endPosY = ypos;
@@ -147,7 +147,7 @@ bool SetEnd(int xpos, int ypos)
     }
 }
 
-bool GetEnd(int& xpos, int& ypos)
+extern "C" __declspec(dllexport) bool GetEnd(int& xpos, int& ypos)
 {
     xpos = endPosX;
     ypos = endPosY;
@@ -163,7 +163,7 @@ bool GetEnd(int& xpos, int& ypos)
     }
 }
 
-bool Restart()
+extern "C" __declspec(dllexport) bool Restart()
 {
     mazeGraph = new Graph(mazeWidth, mazeHeight, mazeData, startPosX, startPosY, endPosX, endPosY);
     return true;
