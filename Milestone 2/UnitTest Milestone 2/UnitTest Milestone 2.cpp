@@ -68,5 +68,30 @@ namespace UnitTestMilestone2
 			Assert::AreEqual(xpos, xpos2);
 			Assert::AreEqual(ypos, ypos2);
 		}
+		TEST_METHOD(TestGetNextPosition)
+		{
+			int height = 4;
+			int width = 4;
+			int xpos = 1;
+			int ypos = 1;
+			int** maze = new int* [width];
+			int value = 0;
+			for (size_t i = 0; i < width; i++)
+			{
+				maze[i] = new int[height];
+				for (size_t j = 0; j < height; j++)
+				{
+					maze[i][j] = value++;
+				}
+			}
+			SetMaze((const int**)maze, width, height);
+			SetStart(xpos, ypos);
+			xpos = 3;
+			ypos = 3;
+			SetEnd(xpos, ypos);
+			xpos = 1;
+			ypos = 1;
+			Assert::IsTrue(GetNextPosition(xpos, ypos));
+		}
 	};
 }

@@ -1,5 +1,7 @@
 ﻿  UnitTest Milestone 2.cpp
 C:\Users\uluru\source\repos\IGME209-project\Milestone 2\UnitTest Milestone 2\UnitTest Milestone 2.cpp(37,25): warning C4018: '<': signed/unsigned mismatch
 C:\Users\uluru\source\repos\IGME209-project\Milestone 2\UnitTest Milestone 2\UnitTest Milestone 2.cpp(40,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\uluru\source\repos\IGME209-project\Milestone 2\UnitTest Milestone 2\UnitTest Milestone 2.cpp(79,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\uluru\source\repos\IGME209-project\Milestone 2\UnitTest Milestone 2\UnitTest Milestone 2.cpp(82,26): warning C4018: '<': signed/unsigned mismatch
      Creating library C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Debug\UnitTest Milestone 2.lib and object C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Debug\UnitTest Milestone 2.exp
   UnitTest Milestone 2.vcxproj -> C:\Users\uluru\source\repos\IGME209-project\Milestone 2\Debug\UnitTest Milestone 2.dll
