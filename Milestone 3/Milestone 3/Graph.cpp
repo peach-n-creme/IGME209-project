@@ -44,9 +44,9 @@ void Graph::Arrange()
 
 		for (int a = 0; a < width; a++)
 		{
-			if (data[a][b] == 0)
+			if (data[a][b] != 0)
 			{
-				blankVertex = new Vertex(a, b, 1);
+				blankVertex = new Vertex(a, b, data[a][b]);
 				vertexRow.push_back(blankVertex);
 			}
 		}
@@ -58,21 +58,21 @@ void Graph::Arrange()
 	{
 		for (int a = 0; a < width; a++)
 		{
-			if (vertices[a][b]->movementCost == 1)
+			if (vertices[a][b]->movementCost < 0)
 			{
-				if (vertices[a + 1][b]->movementCost == 1)
+				if (vertices[a + 1][b]->movementCost < 0)
 				{
 					adjacency[a, b] = 1;
 				}
-				else if (vertices[a - 1][b]->movementCost == 1)
+				else if (vertices[a - 1][b]->movementCost < 0)
 				{
 					adjacency[a, b] = 1;
 				}
-				else if (vertices[a][b + 1]->movementCost == 1)
+				else if (vertices[a][b + 1]->movementCost < 0)
 				{
 					adjacency[a, b] = 1;
 				}
-				else if (vertices[a][b - 1]->movementCost == 1)
+				else if (vertices[a][b - 1]->movementCost < 0)
 				{
 					adjacency[a, b] = 1;
 				}
@@ -137,21 +137,21 @@ void Graph::Pathfind(int startX, int startY, int endX, int endY)
 
 
 		//check current node for neighbors
-		if (vertices[current->xPos + 1][current->yPos]->movementCost == 1)
+		if (vertices[current->xPos + 1][current->yPos]->movementCost < 0)
 		{
 			neighborNodes.push_back(vertices[current->xPos + 1][current->yPos]);
 		}
-		else if (vertices[current->xPos - 1][current->yPos]->movementCost == 1)
+		else if (vertices[current->xPos - 1][current->yPos]->movementCost < 0)
 		{
 			neighborNodes.push_back(vertices[current->xPos - 1][current->yPos]);
 		}
-		else if (vertices[current->xPos][current->yPos + 1]->movementCost == 1)
+		else if (vertices[current->xPos][current->yPos + 1]->movementCost < 0)
 		{
 			neighborNodes.push_back(vertices[current->xPos][current->yPos + 1]);
 		}
-		else if (vertices[current->xPos][current->yPos - 1]->movementCost == 1)
+		else if (vertices[current->xPos][current->yPos - 1]->movementCost < 0)
 		{
-			neighborNodes.push_back(vertices[current->xPos][current->yPos - 1]);
+			neighborNodes.push_back(vertices[current->xPos][current->yPos < 0]);
 		}
 
 
